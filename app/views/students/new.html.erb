@@ -1,0 +1,24 @@
+<div class="container" id="judge_signup_form_container">
+	<div class="row">
+		<div class="form_container col-md-6 col-md-offset-3">
+			<%= form_for Student.new, :url => students_url, :method => :post, :builder => FormWithValidations, :html => {:id => "signup_form", :class => "form"} do |f| %>
+				<legend>Sign Up as Student</legend>
+				<div class="row">
+					<div class="col-xs-6 col-md-6">
+						<%= f.text_field :first_name, :class => 'form-control input-lg', :placeholder => 'First Name' %>
+					</div>
+					<div class="col-xs-6 col-md-6">
+						<%= f.text_field :last_name, :class => 'form-control input-lg', :placeholder => 'Last Name' %>
+					</div>
+				</div>
+				<div class="input_row">
+					<%= f.text_field :uin, :class => 'form-control input-lg', :placeholder => 'UIN' %>
+				</div>
+				<div class="input_row">
+					<%= f.text_field :email, :class => 'form-control input-lg', :placeholder => 'Email' %>
+				</div>
+				<%= f.submit "Signup as Student", :class => 'btn btn-lg btn-primary btn-block signup-btn' %>
+			<% end %>
+		</div>
+	</div>
+</div>

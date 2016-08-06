@@ -1,0 +1,24 @@
+<div class="container" id="judge_signup_form_container">
+	<div class="row">
+		<div class="form_container col-md-6 col-md-offset-3">
+			<%= simple_form_for Judge.new, :url => judges_url, :method => :post, :builder => FormWithValidations, :html => {:id => "signup_form", :class => "form"} do |f| %>
+				<legend>Sign Up as Judge</legend>
+				<div class="row">
+					<div class="col-xs-6 col-md-6">
+						<%= f.text_field :first_name, :class => 'form-control input-lg', :placeholder => 'First Name' %>
+					</div>
+					<div class="col-xs-6 col-md-6">
+						<%= f.text_field :last_name, :class => 'form-control input-lg', :placeholder => 'Last Name' %>
+					</div>
+				</div>
+				<%= f.text_field :email, :class => 'form-control input-lg', :placeholder => 'Email' %>
+				<div class="radio_row">
+					<label> Institution : </label>
+					<label class="radio-inline"> <%= f.radio_button(:tamu, "1") %> Texas A & M </label>
+					<label class="radio-inline"> <%= f.radio_button(:tamu, "0") %> External </label>
+				</div>
+				<%= f.submit "Signup as Judge", :class => 'btn btn-lg btn-primary btn-block signup-btn' %>
+			<% end %>         
+		</div>
+	</div>
+</div>
